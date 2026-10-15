@@ -16,7 +16,74 @@
 <!-- YOUR CSS -->
 <link rel="stylesheet" href="css/style.css">
 
-</head>
+
+<style>
+  .hero-updated {
+    padding: 125px 0 75px;
+    text-align: left;
+    overflow: hidden;
+  }
+  .hero-updated h1 { font-weight: 800; letter-spacing: -0.04em; }
+  .hero-eyebrow {
+    color: #d94f8a; font-weight: 800; letter-spacing: .14em;
+    font-size: .8rem; margin-bottom: .7rem;
+  }
+  .hero-description { max-width: 720px; }
+  .profile-photo-wrap {
+    display: inline-flex; padding: 10px; border-radius: 28px;
+    background: linear-gradient(135deg, #245c45, #d94f8a);
+    box-shadow: 0 18px 45px rgba(20, 45, 35, .2);
+  }
+  .profile-img-right {
+    display: block; width: min(100%, 310px); height: 360px;
+    object-fit: cover; border-radius: 20px; border: 4px solid #fff;
+  }
+  .profile-caption { margin-top: 14px; font-weight: 600; opacity: .8; }
+  .live-projects-heading { font-size: 1.15rem; font-weight: 800; margin: 1.5rem 0 .9rem; }
+  .live-project-card {
+    display: flex; align-items: flex-start; gap: 14px; height: 100%;
+    padding: 20px; border: 1px solid rgba(36, 92, 69, .14);
+    border-radius: 18px; background: #fff; color: #24352d;
+    text-decoration: none; box-shadow: 0 8px 24px rgba(25, 45, 35, .07);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .live-project-card:hover, .live-project-card:focus-visible {
+    transform: translateY(-7px); border-color: #d94f8a;
+    box-shadow: 0 18px 35px rgba(25, 45, 35, .16); color: #24352d;
+  }
+  .live-project-card:focus-visible { outline: 3px solid #d94f8a; outline-offset: 3px; }
+  .live-project-icon {
+    display: grid; place-items: center; flex: 0 0 48px; height: 48px;
+    border-radius: 14px; background: #245c45; color: white; font-weight: 800;
+  }
+  .faith-icon { background: #d94f8a; }
+  .live-label { font-size: .68rem; font-weight: 800; letter-spacing: .1em; color: #d94f8a; }
+  .live-project-card h5 { margin: .25rem 0 .45rem; font-weight: 800; }
+  .live-project-card p { font-size: .9rem; line-height: 1.5; margin-bottom: .8rem; }
+  .live-project-link { color: #245c45; font-weight: 800; font-size: .9rem; }
+  .certificate-card { height: 100%; transition: transform .22s ease, box-shadow .22s ease; }
+  .certificate-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,.14) !important; }
+  .chels-certificate-art {
+    min-height: 180px; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; padding: 22px; text-align: center;
+    color: #245c45; background: linear-gradient(135deg, #fff7f5, #f4eee8);
+    border-bottom: 1px solid #eadfd9;
+  }
+  .chels-certificate-art .certificate-seal { font-size: 2rem; margin-bottom: 8px; }
+  @media (max-width: 991.98px) {
+    .hero-updated { padding-top: 105px; }
+    .hero-updated, .hero-updated .container { text-align: center; }
+    .hero-description { margin-left: auto; margin-right: auto; }
+    .hero-updated .d-flex { justify-content: center; }
+    .profile-img-right { height: 290px; width: min(75vw, 270px); }
+    .live-project-card { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .live-project-card, .certificate-card { transition: none; }
+    .live-project-card:hover, .certificate-card:hover { transform: none; }
+  }
+</style>
+\n</head>
 
 
 <body>
@@ -100,51 +167,63 @@ Contact
 <!-- HERO -->
 <!-- ===================================================== -->
 
-<section class="hero">
+<section class="hero hero-updated">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- LEFT: INTRODUCTION AND LIVE PROJECTS -->
+      <div class="col-lg-8 order-2 order-lg-1">
+        <p class="hero-eyebrow">IT SUPPORT · WEB DEVELOPMENT</p>
+        <h1>Noel Salva</h1>
+        <h4>IT Specialist | Web Developer</h4>
+        <p class="hero-description">
+          Building practical web-based systems and supporting digital workflows.
+          Explore my live projects built with PHP, MySQL, and related web technologies.
+        </p>
 
-<div class="container text-center">
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <a href="#projects" class="btn btn-primary">View All Projects</a>
+          <a href="resume/Resume.pdf" class="btn btn-success" target="_blank" rel="noopener noreferrer">View Resume</a>
+        </div>
 
+        <h3 class="live-projects-heading">Live Projects</h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <a class="live-project-card" href="https://cwicph.com" target="_blank" rel="noopener noreferrer"
+               aria-label="Open CWICPH live website in a new tab">
+              <div class="live-project-icon" aria-hidden="true">CW</div>
+              <div>
+                <span class="live-label">LIVE WEBSITE</span>
+                <h5>CWICPH.COM</h5>
+                <p>Membership, products, orders, and business management web system.</p>
+                <span class="live-project-link">Visit live website <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a class="live-project-card" href="https://faithconnect-production-a313.up.railway.app/" target="_blank" rel="noopener noreferrer"
+               aria-label="Open FaithConnect live website in a new tab">
+              <div class="live-project-icon faith-icon" aria-hidden="true">FC</div>
+              <div>
+                <span class="live-label">LIVE WEB APP</span>
+                <h5>FaithConnect</h5>
+                <p>Live web application developed using PHP and MySQL.</p>
+                <span class="live-project-link">Open live app <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-<img src="images/PICTURE.png"
-     class="profile-img"
-     alt="Noel Salva Profile">
-
-
-<h1>
-Noel Salva
-</h1>
-
-
-<h4>
-IT Specialist/Data Analyst/Graphic Artist
-</h4>
-
-
-<p>
-Transforming data into actionable insights using
-Excel, SQL, Python, Power BI, and Data Visualization.
-</p>
-
-
-<a href="#projects"
-   class="btn btn-primary me-2">
-
-View Projects
-
-</a>
-
-
-<a href="resume/Noel_Salva_Resume.pdf"
-   class="btn btn-success"
-   target="_blank">
-
-View Resume
-
-</a>
-
-
-</div>
-
+      <!-- RIGHT: PROFILE PHOTO -->
+      <div class="col-lg-4 order-1 order-lg-2 text-center">
+        <div class="profile-photo-wrap">
+          <img src="images/PICTURE.png" class="profile-img profile-img-right"
+               alt="Noel Salva profile picture">
+        </div>
+        <p class="profile-caption">IT Specialist · Web Developer</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1373,6 +1452,27 @@ View Certificate
 
 </div>
 
+
+
+        <!-- Certificate 5: Chels Wellness International -->
+        <div class="col-md-4">
+          <div class="card shadow certificate-card">
+            <div class="chels-certificate-art">
+              <div class="certificate-seal" aria-hidden="true">✦</div>
+              <div class="small fw-bold text-uppercase">Chels Wellness International</div>
+              <h5 class="mt-2 mb-1">Certificate of Employment</h5>
+              <div class="small">IT Specialist / Web Programmer</div>
+            </div>
+            <div class="card-body text-center">
+              <h5>Chels Wellness International</h5>
+              <p class="text-muted">Employment certificate for IT-related services and web development work.</p>
+              <a href="certificate/Chels_Wellness_International_Certificate.pdf"
+                 target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
 
 </div>
 
